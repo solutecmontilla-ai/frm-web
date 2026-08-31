@@ -28,11 +28,19 @@ interface BracketMatch {
   penalties?: boolean;
 }
 
+interface FinalMatch {
+  label: string;
+  team1: BracketTeam | null;
+  team2: BracketTeam | null;
+  winner: 1 | 2 | null;
+  penalties?: boolean;
+}
+
 interface PlayoffData {
   quarterFinals: BracketMatch[];
   semiFinals: BracketMatch[];
   thirdPlace?: BracketMatch;
-  final: BracketMatch;
+  final: FinalMatch;
   champion?: string;
 }
 
@@ -124,6 +132,7 @@ const PlayoffBracket = () => {
   const semiFinals = data?.semiFinals ?? [];
   const thirdPlace = data?.thirdPlace ?? null;
   const final = data?.final ?? null;
+  const finalReady = !!(final && final.team1 && final.team2);
   const champion = data?.champion ?? null;
 
   const leftQuarters = quarterFinals.slice(0, 2);
@@ -169,7 +178,13 @@ const PlayoffBracket = () => {
                   <div className="w-20 h-20 rounded-full bg-gradient-card border-2 border-primary/50 flex items-center justify-center shadow-glow p-2">
                     <img src={ligaLogo} alt="Liga FRM" className="max-w-full max-h-full object-contain" />
                   </div>
-                  {final && <MatchupCard match={final} />}
+                  {finalReady && final && <MatchupCard match={final as BracketMatch} />}
+                  {!finalReady && !champion && (
+                    <div className="text-center">
+                      <div className="text-xs font-bold text-primary uppercase tracking-widest font-display">Gran Final</div>
+                      <div className="text-xs text-muted-foreground italic mt-1">Por definir</div>
+                    </div>
+                  )}
                   {champion && (
                     <div className="flex flex-col items-center gap-2 bg-amber-500/10 border border-amber-500/40 rounded-xl px-4 py-3 w-full text-center">
                       <Trophy className="w-6 h-6 text-amber-400" />
@@ -234,10 +249,16 @@ const PlayoffBracket = () => {
                   <MatchupCard match={thirdPlace} />
                 </div>
               )}
-              {final && (
+              {finalReady && final && (
                 <div className="space-y-3 pt-2">
                   <h3 className="text-sm font-bold text-primary uppercase tracking-widest text-center font-display">Gran Final</h3>
-                  <MatchupCard match={final} />
+                  <MatchupCard match={final as BracketMatch} />
+                </div>
+              )}
+              {!finalReady && !champion && (
+                <div className="text-center pt-2">
+                  <h3 className="text-sm font-bold text-primary uppercase tracking-widest font-display">Gran Final</h3>
+                  <span className="text-xs text-muted-foreground italic">Por definir</span>
                 </div>
               )}
               {champion && (
