@@ -1,0 +1,32 @@
+{
+  "updatedAt": "2026-04-18T00:00:00Z",
+  "scorers": [
+    { "name": "Erick Briceño",     "team": "Golazo",        "goals": 11 },
+    { "name": "Ramón Ruiz",        "team": "Real Maracay",  "goals": 8  },
+    { "name": "Joe Molina",        "team": "Casa Italia",   "goals": 6  },
+    { "name": "Deibi Infante",     "team": "Chelsea",       "goals": 6  },
+    { "name": "Francisco Salcedo", "team": "Consorcio",     "goals": 5  },
+    { "name": "Joexander Tovar",   "team": "Aviación",      "goals": 5  },
+    { "name": "Freddy Manrique",   "team": "Juventus",      "goals": 5  },
+    { "name": "Luis Cohen",        "team": "Chelsea",       "goals": 5  },
+    { "name": "Jhonatan Flores",   "team": "Juventus",      "goals": 4  },
+    { "name": "Fernando Leal",     "team": "Casa Italia",   "goals": 4  },
+    { "name": "Pedro Cuellar",     "team": "Real Maracay",  "goals": 4  },
+    { "name": "Miguel Landaeta",   "team": "Pepitos Point", "goals": 4  },
+    { "name": "Edinson Segovia",   "team": "Casa Italia",   "goals": 4  },
+    { "name": "Jackson Mijares",   "team": "Real Maracay",  "goals": 3  },
+    { "name": "Diamante Castro",   "team": "Golazo",        "goals": 3  },
+    { "name": "Pablo Bernal",      "team": "Pepitos Point", "goals": 3  },
+    { "name": "Jesus García",      "team": "Golazo",        "goals": 3  },
+    { "name": "Wencer Gómez",      "team": "Ágape",         "goals": 3  },
+    { "name": "Andrés Parra",      "team": "Pepitos Point", "goals": 3  },
+    { "name": "Osmel Franco",      "team": "Real Maracay",  "goals": 2  },
+    { "name": "Armando Serrano",   "team": "Golazo",        "goals": 2  },
+    { "name": "Rattia García",     "team": "Juventus",      "goals": 2  },
+    { "name": "Pablo Infante",     "team": "Chelsea",       "goals": 2  },
+    { "name": "Rainer Monagas",    "team": "Aviación",      "goals": 2  },
+    { "name": "Raúl Gómez",        "team": "Golazo",        "goals": 2  },
+    { "name": "Winder Aponte",     "team": "Consorcio",     "goals": 2  },
+    { "name": "Johnny Arreaza",    "team": "Aviación",      "goals": 2  }
+  ]
+}

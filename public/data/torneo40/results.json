@@ -1,0 +1,401 @@
+{
+  "updatedAt": "2026-04-18T00:00:00Z",
+  "jornadas": [
+    {
+      "number": -1,
+      "label": "Cuartos de Final",
+      "matches": [
+        {
+          "homeTeam": "Pepitos Point", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Casa Italia",   "awayScore": 2,
+          "awayScorers": [{ "name": "Edinson Segovia", "goals": 1 }, { "name": "Jorge Villegas", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Consorcio", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Ágape",     "awayScore": 1,
+          "awayScorers": [{ "name": "Gerald Romero", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Golazo",  "homeScore": 1, "homeScorers": [{ "name": "Diamante Castro", "goals": 1 }],
+          "awayTeam": "Chelsea", "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Real Maracay", "homeScore": 2, "homeScorers": [{ "name": "Jackson Mijares", "goals": 2 }],
+          "awayTeam": "Juventus",     "awayScore": 0, "awayScorers": []
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "label": "Fecha 9",
+      "matches": [
+        {
+          "homeTeam": "Casa Italia", "homeScore": 1, "homeScorers": [{ "name": "Edison Segovia", "goals": 1 }],
+          "awayTeam": "Golazo",      "awayScore": 1, "awayScorers": [{ "name": "Erick Briceño", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Juventus",  "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Consorcio", "awayScore": 1, "awayScorers": [{ "name": "Francisco Salcedo", "goals": 1 }]
+        },
+        {
+          "homeTeam": "FRM",           "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Pepitos Point", "awayScore": 5,
+          "awayScorers": [
+            { "name": "Miguel Landaeta", "goals": 2 },
+            { "name": "Andrés Parra",    "goals": 1 },
+            { "name": "Elio Barrios",    "goals": 1 },
+            { "name": "Gustavo Estrada", "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Real Maracay", "homeScore": 3,
+          "homeScorers": [{ "name": "Pedro Cuellar", "goals": 2 }, { "name": "Ramón Ruiz", "goals": 1 }],
+          "awayTeam": "Chelsea", "awayScore": 2,
+          "awayScorers": [{ "name": "Deibi Infante", "goals": 2 }]
+        },
+        {
+          "homeTeam": "Ágape",    "homeScore": 2,
+          "homeScorers": [{ "name": "Wencer Gómez", "goals": 1 }, { "name": "Lewis Arciniega", "goals": 1 }],
+          "awayTeam": "Aviación", "awayScore": 1,
+          "awayScorers": [{ "name": "Joexander Tovar", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "label": "Fecha 8",
+      "matches": [
+        {
+          "homeTeam": "Casa Italia", "homeScore": 3,
+          "homeScorers": [{ "name": "Joe Molina", "goals": 2 }, { "name": "Fernando Leal", "goals": 1 }],
+          "awayTeam": "Chelsea", "awayScore": 2,
+          "awayScorers": [{ "name": "Deibi Infante", "goals": 1 }, { "name": "Marco Fatoni", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Golazo", "homeScore": 3,
+          "homeScorers": [
+            { "name": "Erick Briceño",    "goals": 1 },
+            { "name": "Roberto Di Prieto","goals": 1 },
+            { "name": "Armando Serrano",  "goals": 1 }
+          ],
+          "awayTeam": "Aviación", "awayScore": 1,
+          "awayScorers": [{ "name": "Rody Gómez", "goals": 1 }]
+        },
+        {
+          "homeTeam": "FRM",      "homeScore": 1, "homeScorers": [{ "name": "Morillo", "goals": 1 }],
+          "awayTeam": "Consorcio","awayScore": 3,
+          "awayScorers": [
+            { "name": "Cristina Alarcon", "goals": 1 },
+            { "name": "Joseph Fun",       "goals": 1 },
+            { "name": "Lisandro Chirino", "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Juventus",     "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Real Maracay", "awayScore": 4,
+          "awayScorers": [
+            { "name": "Osmel Franco",    "goals": 2 },
+            { "name": "Franzua Cardona", "goals": 1 },
+            { "name": "Yose Betancourt", "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Ágape",         "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Pepitos Point", "awayScore": 0, "awayScorers": []
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "label": "Fecha 7",
+      "matches": [
+        {
+          "homeTeam": "Pepitos Point", "homeScore": 2,
+          "homeScorers": [{ "name": "Keni Novel", "goals": 1 }, { "name": "Isay Azuaje", "goals": 1 }],
+          "awayTeam": "Casa Italia", "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Real Maracay", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Consorcio",    "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "FRM",      "homeScore": 2,
+          "homeScorers": [{ "name": "Carlos Moreno", "goals": 1 }, { "name": "Rogelio", "goals": 1 }],
+          "awayTeam": "Aviación", "awayScore": 3,
+          "awayScorers": [
+            { "name": "Joexander Tovar", "goals": 2 },
+            { "name": "Freddy Campero",  "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Golazo", "homeScore": 5,
+          "homeScorers": [
+            { "name": "Erick Briceño",  "goals": 2 },
+            { "name": "Armando Serrano","goals": 1 },
+            { "name": "Luis Rodríguez", "goals": 1 },
+            { "name": "Jesus García",   "goals": 1 }
+          ],
+          "awayTeam": "Ágape", "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Chelsea",  "homeScore": 3, "homeScorers": [{ "name": "Luis Cohen", "goals": 3 }],
+          "awayTeam": "Juventus", "awayScore": 1, "awayScorers": [{ "name": "Jonathan Flores", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "label": "Fecha 6",
+      "matches": [
+        {
+          "homeTeam": "Casa Italia", "homeScore": 1, "homeScorers": [{ "name": "Esteban Nardulli", "goals": 1 }],
+          "awayTeam": "Aviación",    "awayScore": 4,
+          "awayScorers": [
+            { "name": "Johnny Arreaza",  "goals": 2 },
+            { "name": "Joexander Tovar", "goals": 1 },
+            { "name": "Carlos Ruiz",     "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Consorcio", "homeScore": 5,
+          "homeScorers": [
+            { "name": "Winder Aponte",     "goals": 2 },
+            { "name": "Willian Rodríguez", "goals": 1 },
+            { "name": "Silvestre Lipetri", "goals": 1 },
+            { "name": "Francisco Salcedo", "goals": 1 }
+          ],
+          "awayTeam": "Chelsea", "awayScore": 2,
+          "awayScorers": [
+            { "name": "Miguel Garcia",    "goals": 1 },
+            { "name": "Jolfred Alexander","goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "FRM",    "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Golazo", "awayScore": 2,
+          "awayScorers": [{ "name": "Jesus García", "goals": 2 }]
+        },
+        {
+          "homeTeam": "Real Maracay", "homeScore": 2,
+          "homeScorers": [{ "name": "Pedro Cuellar", "goals": 1 }, { "name": "Cristofer Mendoza", "goals": 1 }],
+          "awayTeam": "Ágape", "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Pepitos Point", "homeScore": 2,
+          "homeScorers": [{ "name": "Andrés Parra", "goals": 1 }, { "name": "Richard Diaz", "goals": 1 }],
+          "awayTeam": "Juventus", "awayScore": 0, "awayScorers": []
+        }
+      ]
+    },
+    {
+      "number": 0,
+      "label": "Fecha Pendiente",
+      "matches": [
+        {
+          "homeTeam": "Casa Italia", "homeScore": 4,
+          "homeScorers": [
+            { "name": "Edinson Segovia", "goals": 2 },
+            { "name": "Jose Schillaci",  "goals": 1 },
+            { "name": "Fernando Leal",   "goals": 1 }
+          ],
+          "awayTeam": "Juventus", "awayScore": 1,
+          "awayScorers": [{ "name": "Jonathan Flores", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Ágape",    "homeScore": 1, "homeScorers": [{ "name": "Wilman Ramos", "goals": 1 }],
+          "awayTeam": "Consorcio","awayScore": 0, "awayScorers": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "label": "Fecha 5",
+      "matches": [
+        {
+          "homeTeam": "Consorcio", "homeScore": 3, "homeScorers": [{ "name": "Francisco Salcedo", "goals": 3 }],
+          "awayTeam": "Casa Italia","awayScore": 3,
+          "awayScorers": [{ "name": "Joe Molina", "goals": 2 }, { "name": "Edgar González", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Juventus", "homeScore": 2,
+          "homeScorers": [{ "name": "Freddy Manrique", "goals": 1 }, { "name": "Jhonatan Flores", "goals": 1 }],
+          "awayTeam": "Aviación", "awayScore": 1,
+          "awayScorers": [{ "name": "Jesús Mendoza", "goals": 1 }]
+        },
+        {
+          "homeTeam": "FRM",   "homeScore": 1, "homeScorers": [{ "name": "Eduardo Rodríguez", "goals": 1 }],
+          "awayTeam": "Ágape", "awayScore": 1, "awayScorers": [{ "name": "Ronmel Briceño", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Pepitos Point", "homeScore": 2,
+          "homeScorers": [{ "name": "Miguel Landaeta", "goals": 1 }, { "name": "Héctor González", "goals": 1 }],
+          "awayTeam": "Chelsea", "awayScore": 1,
+          "awayScorers": [{ "name": "Eduardo Valdés", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Golazo",      "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Real Maracay","awayScore": 1,
+          "awayScorers": [{ "name": "Daniel Olvera", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "label": "Fecha 4",
+      "matches": [
+        {
+          "homeTeam": "Real Maracay", "homeScore": 3,
+          "homeScorers": [
+            { "name": "Jackson Mijares", "goals": 1 },
+            { "name": "Pedro Cuellar",   "goals": 1 },
+            { "name": "Adrian Bolivar",  "goals": 1 }
+          ],
+          "awayTeam": "Casa Italia", "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Chelsea", "homeScore": 2,
+          "homeScorers": [{ "name": "Deibi Infante", "goals": 1 }, { "name": "Miguel Garcia", "goals": 1 }],
+          "awayTeam": "Ágape",   "awayScore": 2,
+          "awayScorers": [{ "name": "Yovanni de la Rosa", "goals": 1 }, { "name": "Franklin Diaz", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Juventus", "homeScore": 5,
+          "homeScorers": [
+            { "name": "Freddy Manrique", "goals": 2 },
+            { "name": "Rattia García",   "goals": 2 },
+            { "name": "Jhonatan Flores", "goals": 1 }
+          ],
+          "awayTeam": "FRM", "awayScore": 1,
+          "awayScorers": [{ "name": "Jose Fernández", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Aviación", "homeScore": 2,
+          "homeScorers": [{ "name": "Jose Castro", "goals": 1 }, { "name": "Joexander Tovar", "goals": 1 }],
+          "awayTeam": "Consorcio","awayScore": 2,
+          "awayScorers": [{ "name": "Cristian Alarcón", "goals": 1 }, { "name": "Joseph Fun", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Golazo", "homeScore": 3,
+          "homeScorers": [{ "name": "Erick Briceño", "goals": 2 }, { "name": "Gabriel Segovia", "goals": 1 }],
+          "awayTeam": "Pepitos Point","awayScore": 0, "awayScorers": []
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "label": "Fecha 3",
+      "matches": [
+        {
+          "homeTeam": "Casa Italia", "homeScore": 3,
+          "homeScorers": [{ "name": "Fernando Leal", "goals": 2 }, { "name": "Edgar González", "goals": 1 }],
+          "awayTeam": "FRM", "awayScore": 1,
+          "awayScorers": [{ "name": "Angel González", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Pepitos Point", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Real Maracay",  "awayScore": 3,
+          "awayScorers": [{ "name": "Ramón Ruiz", "goals": 2 }, { "name": "Jhonny Acacio", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Aviación", "homeScore": 1, "homeScorers": [{ "name": "Raúl Spallone", "goals": 1 }],
+          "awayTeam": "Chelsea",  "awayScore": 2,
+          "awayScorers": [{ "name": "José Gómez", "goals": 1 }, { "name": "Luis Cohen", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Ágape",    "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Juventus", "awayScore": 2,
+          "awayScorers": [{ "name": "Jhonatan Flores", "goals": 1 }, { "name": "Freddy Manrique", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Golazo",   "homeScore": 3,
+          "homeScorers": [{ "name": "Raúl Gómez", "goals": 1 }, { "name": "Erick Briceño", "goals": 2 }],
+          "awayTeam": "Consorcio","awayScore": 2,
+          "awayScorers": [{ "name": "Javier Sánchez", "goals": 1 }, { "name": "Lisandro Chirinos", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "label": "Fecha 2",
+      "matches": [
+        {
+          "homeTeam": "Ágape",      "homeScore": 2, "homeScorers": [{ "name": "Wencer Gómez", "goals": 2 }],
+          "awayTeam": "Casa Italia","awayScore": 1, "awayScorers": [{ "name": "Hernán Rico", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Aviación",    "homeScore": 2,
+          "homeScorers": [{ "name": "Joexander Tovar", "goals": 1 }, { "name": "José Hernández", "goals": 1 }],
+          "awayTeam": "Real Maracay","awayScore": 4,
+          "awayScorers": [
+            { "name": "Ramón Ruiz",   "goals": 2 },
+            { "name": "Osmel Franco", "goals": 1 },
+            { "name": "Pedro Cuellar","goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "FRM",     "homeScore": 2,
+          "homeScorers": [{ "name": "Rogelio", "goals": 1 }, { "name": "Luis Basulto", "goals": 1 }],
+          "awayTeam": "Chelsea", "awayScore": 3,
+          "awayScorers": [
+            { "name": "Deibi Infante",     "goals": 1 },
+            { "name": "Jolfred Alexander", "goals": 1 },
+            { "name": "Carlos Castro",     "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Golazo",   "homeScore": 4,
+          "homeScorers": [
+            { "name": "Armando Serrano","goals": 1 },
+            { "name": "Jean Perozo",   "goals": 1 },
+            { "name": "Raúl Gómez",    "goals": 1 },
+            { "name": "Erick Briceño", "goals": 1 }
+          ],
+          "awayTeam": "Juventus", "awayScore": 1,
+          "awayScorers": [{ "name": "Freddy Manrrique", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Pepitos Point", "homeScore": 5,
+          "homeScorers": [
+            { "name": "Pablo Bernal",    "goals": 2 },
+            { "name": "Elio Barrios",    "goals": 1 },
+            { "name": "Andrés Parra",    "goals": 1 },
+            { "name": "Miguel Landaeta", "goals": 1 }
+          ],
+          "awayTeam": "Consorcio","awayScore": 1,
+          "awayScorers": [{ "name": "Pablo Meligon", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 1,
+      "label": "Fecha 1",
+      "matches": [
+        {
+          "homeTeam": "Pepitos Point", "homeScore": 3,
+          "homeScorers": [
+            { "name": "Adam Salazar",   "goals": 1 },
+            { "name": "Pablo Bernal",   "goals": 1 },
+            { "name": "Orlando Galindo","goals": 1 }
+          ],
+          "awayTeam": "Aviación", "awayScore": 2,
+          "awayScorers": [{ "name": "Rainer Monagas", "goals": 2 }]
+        },
+        {
+          "homeTeam": "FRM",         "homeScore": 1, "homeScorers": [{ "name": "Elvis Abreu", "goals": 1 }],
+          "awayTeam": "Real Maracay","awayScore": 5,
+          "awayScorers": [
+            { "name": "Ramón Ruiz",       "goals": 3 },
+            { "name": "David Atehortua",  "goals": 1 },
+            { "name": "Franzua Cardona",  "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Chelsea", "homeScore": 3,
+          "homeScorers": [{ "name": "Pablo Infante", "goals": 2 }, { "name": "Luis Cohen", "goals": 1 }],
+          "awayTeam": "Golazo",  "awayScore": 4,
+          "awayScorers": [{ "name": "Erick Briceño", "goals": 2 }, { "name": "Diamante Castro", "goals": 2 }]
+        }
+      ]
+    }
+  ]
+}

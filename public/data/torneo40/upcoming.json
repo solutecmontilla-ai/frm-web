@@ -1,0 +1,14 @@
+{
+  "updatedAt": "2026-04-29T00:00:00Z",
+  "phase": "Copa FARMATOLAN — 9na Edición",
+  "matchdays": [
+    {
+      "day": "Sábado",
+      "venue": "La Trinidad",
+      "matches": [
+        { "homeTeam": "Golazo",      "awayTeam": "Ágape",       "time": "2:30 PM", "note": "Tercer Lugar" },
+        { "homeTeam": "Real Maracay","awayTeam": "Casa Italia", "time": "4:00 PM", "note": "Gran Final" }
+      ]
+    }
+  ]
+}

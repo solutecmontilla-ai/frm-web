@@ -1,0 +1,335 @@
+{
+  "updatedAt": "2026-04-18T00:00:00Z",
+  "jornadas": [
+    {
+      "number": 9,
+      "label": "Jornada 9",
+      "matches": [
+        {
+          "homeTeam": "Coromoto FC", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Fénix",       "awayScore": 1,
+          "awayScorers": [{ "name": "José Araujo", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Atl. Mariño", "homeScore": 3,
+          "homeScorers": [{ "name": "Douglas Gómez", "goals": 2 }, { "name": "J. Oviedo (e/p)", "goals": 1 }],
+          "awayTeam": "Jezreel",     "awayScore": 3,
+          "awayScorers": [{ "name": "Tayron Flores", "goals": 2 }, { "name": "Luis Guevara", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Jezreel",    "homeScore": 1, "homeScorers": [{ "name": "Y. Cabrera", "goals": 1 }],
+          "awayTeam": "FC Coromoto","awayScore": 7,
+          "awayScorers": [
+            { "name": "Chris Lesmes",   "goals": 2 },
+            { "name": "Yose Betancourt","goals": 2 },
+            { "name": "Luis Aponte",    "goals": 1 },
+            { "name": "Pedro Acosta",   "goals": 1 },
+            { "name": "Dalvert Mora",   "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Ingenieros",      "homeScore": 2, "homeScorers": [{ "name": "Randy Diaz", "goals": 2 }],
+          "awayTeam": "Atl. San Ignacio","awayScore": 3,
+          "awayScorers": [{ "name": "Johan Pérez", "goals": 2 }]
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "label": "Jornada 8",
+      "matches": [
+        {
+          "homeTeam": "Coromoto FC",      "homeScore": 1, "homeScorers": [{ "name": "Miguel Braidi", "goals": 1 }],
+          "awayTeam": "Junior la Cañada", "awayScore": 4,
+          "awayScorers": [{ "name": "Johani Nieves", "goals": 2 }, { "name": "Eduardo Cabrera", "goals": 2 }]
+        },
+        {
+          "homeTeam": "Atl. San Ignacio","homeScore": 0, "homeScorers": [],
+          "awayTeam": "FRM",             "awayScore": 1,
+          "awayScorers": [{ "name": "Jean Reyes", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Ingenieros",  "homeScore": 0, "homeScorers": [],
+          "awayTeam": "FC Coromoto", "awayScore": 1,
+          "awayScorers": [{ "name": "Carlos García", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Atl. Mariño", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Jezreel",     "awayScore": 0, "awayScorers": [],
+          "status": "SUSPENDIDO"
+        },
+        {
+          "homeTeam": "Jezreel",    "homeScore": 3,
+          "homeScorers": [{ "name": "Francisco Hermoso", "goals": 2 }, { "name": "Tayron Flores", "goals": 1 }],
+          "awayTeam": "Atl. San Ignacio","awayScore": 2,
+          "awayScorers": [{ "name": "Gregory Rodríguez", "goals": 1 }, { "name": "Carlos Perez", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Fénix",      "homeScore": 1, "homeScorers": [{ "name": "Miller Punchilupe", "goals": 1 }],
+          "awayTeam": "The Family", "awayScore": 4,
+          "awayScorers": [
+            { "name": "Jesús Izarra", "goals": 1 },
+            { "name": "José Delgado", "goals": 1 },
+            { "name": "Jan González", "goals": 1 },
+            { "name": "Jose Montoya", "goals": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "label": "Jornada 7",
+      "matches": [
+        {
+          "homeTeam": "Jezreel",         "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Atl. San Ignacio","awayScore": 0, "awayScorers": [],
+          "status": "SUSPENDIDO"
+        },
+        {
+          "homeTeam": "Fénix", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "FRM",   "awayScore": 3,
+          "awayScorers": [
+            { "name": "Jean Reyes",   "goals": 1 },
+            { "name": "Carlos Rojas", "goals": 1 },
+            { "name": "Jair Rivero",  "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Coromoto FC",  "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Atl. Mariño",  "awayScore": 3,
+          "awayScorers": [
+            { "name": "Osmar Martinez", "goals": 2 },
+            { "name": "Franco Arévalo", "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "Junior la Cañada", "homeScore": 4,
+          "homeScorers": [{ "name": "Francisco Sánchez", "goals": 3 }, { "name": "Jorge Márquez", "goals": 1 }],
+          "awayTeam": "Ingenieros",       "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "The Family", "homeScore": 3, "homeScorers": [],
+          "awayTeam": "FC Coromoto","awayScore": 1,
+          "awayScorers": [{ "name": "Luis Aponte", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "label": "Jornada 6",
+      "matches": [
+        {
+          "homeTeam": "Fénix",            "homeScore": 1, "homeScorers": [{ "name": "Jose Araujo", "goals": 1 }],
+          "awayTeam": "Junior la Cañada", "awayScore": 5,
+          "awayScorers": [{ "name": "Francisco Sánchez", "goals": 3 }, { "name": "Jorge Márquez", "goals": 2 }]
+        },
+        {
+          "homeTeam": "Ingenieros", "homeScore": 1, "homeScorers": [{ "name": "Carlos Briceño", "goals": 1 }],
+          "awayTeam": "Atl. Mariño","awayScore": 1,
+          "awayScorers": [{ "name": "Winder Garnique", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Fénix",      "homeScore": 1, "homeScorers": [{ "name": "José Araujo", "goals": 1 }],
+          "awayTeam": "FC Coromoto","awayScore": 5,
+          "awayScorers": [
+            { "name": "Willy Gamez", "goals": 2 },
+            { "name": "Dalvet Mora", "goals": 2 },
+            { "name": "Luis Aponte", "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "FRM",     "homeScore": 1, "homeScorers": [{ "name": "David Parra", "goals": 1 }],
+          "awayTeam": "Jezreel", "awayScore": 1,
+          "awayScorers": [{ "name": "Francisco Hermoso", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Ingenieros", "homeScore": 1, "homeScorers": [{ "name": "Alejandro Araujo", "goals": 1 }],
+          "awayTeam": "Coromoto FC","awayScore": 0, "awayScorers": []
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "label": "Jornada 5",
+      "matches": [
+        {
+          "homeTeam": "The Family", "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Atl. Mariño","awayScore": 1,
+          "awayScorers": [{ "name": "Winder Garnique", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Coromoto FC",     "homeScore": 1, "homeScorers": [{ "name": "Angel Cedeño", "goals": 1 }],
+          "awayTeam": "Atl. San Ignacio","awayScore": 2,
+          "awayScorers": [{ "name": "Lander Velasco", "goals": 1 }, { "name": "Diego Roa", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Atl. San Ignacio","homeScore": 1, "homeScorers": [{ "name": "Luinger Lopez", "goals": 1 }],
+          "awayTeam": "FC Coromoto",     "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "The Family", "homeScore": 1, "homeScorers": [{ "name": "Brayan Bello", "goals": 1 }],
+          "awayTeam": "Coromoto FC","awayScore": 1,
+          "awayScorers": [{ "name": "Breinner Bernal", "goals": 1 }]
+        },
+        {
+          "homeTeam": "FRM",              "homeScore": 1, "homeScorers": [{ "name": "Castoromar León", "goals": 1 }],
+          "awayTeam": "Junior la Cañada", "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Ingenieros", "homeScore": 1, "homeScorers": [{ "name": "Yorwin Sarmiento", "goals": 1 }],
+          "awayTeam": "Jezreel",    "awayScore": 6,
+          "awayScorers": [
+            { "name": "Francisco Hermoso", "goals": 3 },
+            { "name": "Javier Anzola",     "goals": 2 },
+            { "name": "Junior Acosta",     "goals": 1 }
+          ]
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "label": "Jornada 4",
+      "matches": [
+        {
+          "homeTeam": "Ingenieros", "homeScore": 3,
+          "homeScorers": [{ "name": "Carlos Briceño", "goals": 2 }, { "name": "Alejandro Araujo", "goals": 1 }],
+          "awayTeam": "Fénix",      "awayScore": 1,
+          "awayScorers": [{ "name": "Jose Araujo", "goals": 1 }]
+        },
+        {
+          "homeTeam": "FC Coromoto", "homeScore": 1, "homeScorers": [{ "name": "Dalvet Mora", "goals": 1 }],
+          "awayTeam": "Coromoto FC", "awayScore": 2,
+          "awayScorers": [{ "name": "Elio Barrios", "goals": 1 }, { "name": "Breinner Bernal", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Jezreel",          "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Junior la Cañada", "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Atl. San Ignacio","homeScore": 1, "homeScorers": [{ "name": "Jahan Colmenares", "goals": 1 }],
+          "awayTeam": "Atl. Mariño",     "awayScore": 5,
+          "awayScorers": [
+            { "name": "Hernán López",  "goals": 3 },
+            { "name": "Franco Arévalo","goals": 1 },
+            { "name": "Carlos España", "goals": 1 }
+          ]
+        },
+        {
+          "homeTeam": "FRM",        "homeScore": 1, "homeScorers": [{ "name": "Castoromar León", "goals": 1 }],
+          "awayTeam": "The Family", "awayScore": 2,
+          "awayScorers": [{ "name": "Jesus Izarra", "goals": 1 }, { "name": "Jan González", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "label": "Jornada 3",
+      "matches": [
+        {
+          "homeTeam": "The Family",      "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Atl. San Ignacio","awayScore": 1,
+          "awayScorers": [{ "name": "Diego Roa", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Jezreel",    "homeScore": 2, "homeScorers": [{ "name": "Tayron Flores", "goals": 2 }],
+          "awayTeam": "Coromoto FC","awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Atl. Mariño","homeScore": 2,
+          "homeScorers": [{ "name": "Javier Villafras", "goals": 1 }, { "name": "Jorge Rojas", "goals": 1 }],
+          "awayTeam": "Fénix",      "awayScore": 2,
+          "awayScorers": [{ "name": "Dember Parra", "goals": 1 }, { "name": "Gregory Hernández", "goals": 1 }]
+        },
+        {
+          "homeTeam": "FRM",        "homeScore": 4,
+          "homeScorers": [
+            { "name": "David Parra",   "goals": 1 },
+            { "name": "Jean Reyes",    "goals": 1 },
+            { "name": "Angel González","goals": 1 },
+            { "name": "Rogelio",       "goals": 1 }
+          ],
+          "awayTeam": "Ingenieros",  "awayScore": 1,
+          "awayScorers": [{ "name": "Alejandro Araujo", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Junior la Cañada","homeScore": 4,
+          "homeScorers": [
+            { "name": "Johanni Nieves",    "goals": 2 },
+            { "name": "Jeampiero Torres",  "goals": 1 },
+            { "name": "Robert Pimentel",   "goals": 1 }
+          ],
+          "awayTeam": "FC Coromoto",       "awayScore": 1,
+          "awayScorers": [{ "name": "Luis Aponte", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "label": "Jornada 2",
+      "matches": [
+        {
+          "homeTeam": "Atl. Mariño", "homeScore": 2,
+          "homeScorers": [{ "name": "Jackson Mijares", "goals": 1 }, { "name": "Franco Arévalo", "goals": 1 }],
+          "awayTeam": "FC Coromoto", "awayScore": 1,
+          "awayScorers": [{ "name": "Adrian Bolivar", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Junior la Cañada", "homeScore": 2,
+          "homeScorers": [{ "name": "Johani Nieves", "goals": 1 }, { "name": "Jhonny Valdes", "goals": 1 }],
+          "awayTeam": "Atl. San Ignacio",  "awayScore": 0, "awayScorers": []
+        },
+        {
+          "homeTeam": "Fénix",   "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Jezreel", "awayScore": 3,
+          "awayScorers": [{ "name": "Tayron Flores", "goals": 2 }, { "name": "Y. Delgado", "goals": 1 }]
+        },
+        {
+          "homeTeam": "The Family", "homeScore": 4,
+          "homeScorers": [
+            { "name": "José Ramírez",  "goals": 2 },
+            { "name": "José Montoya",  "goals": 1 },
+            { "name": "Miguel Landaeta","goals": 1 }
+          ],
+          "awayTeam": "Ingenieros",  "awayScore": 1,
+          "awayScorers": [{ "name": "Yesnei Soles", "goals": 1 }]
+        },
+        {
+          "homeTeam": "FRM",        "homeScore": 2,
+          "homeScorers": [{ "name": "David Parra", "goals": 1 }, { "name": "Glenderson Quintero", "goals": 1 }],
+          "awayTeam": "Coromoto FC","awayScore": 1,
+          "awayScorers": [{ "name": "David Atehortua", "goals": 1 }]
+        }
+      ]
+    },
+    {
+      "number": 1,
+      "label": "Jornada 1",
+      "matches": [
+        {
+          "homeTeam": "FRM",        "homeScore": 1, "homeScorers": [{ "name": "Carlos Rojas", "goals": 1 }],
+          "awayTeam": "FC Coromoto","awayScore": 1,
+          "awayScorers": [{ "name": "Adrian Bolivar", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Junior la Cañada","homeScore": 1, "homeScorers": [{ "name": "Jean Aure", "goals": 1 }],
+          "awayTeam": "Atl. Mariño",     "awayScore": 1,
+          "awayScorers": [{ "name": "Jefferson Rojas", "goals": 1 }]
+        },
+        {
+          "homeTeam": "Fénix",           "homeScore": 0, "homeScorers": [],
+          "awayTeam": "Atl. San Ignacio","awayScore": 1,
+          "awayScorers": [{ "name": "Gregory Rodríguez", "goals": 1 }]
+        },
+        {
+          "homeTeam": "The Family","homeScore": 1, "homeScorers": [{ "name": "Daniel Castillo", "goals": 1 }],
+          "awayTeam": "Jezreel",   "awayScore": 3,
+          "awayScorers": [
+            { "name": "Y. Delgado",   "goals": 1 },
+            { "name": "Luis Guevara", "goals": 1 },
+            { "name": "Javier Anzola","goals": 1 }
+          ]
+        }
+      ]
+    }
+  ]
+}

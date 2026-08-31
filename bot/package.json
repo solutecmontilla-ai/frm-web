@@ -1,0 +1,14 @@
+{
+  "name": "frm-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot para gestión de torneos FRM",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node --watch bot.js"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0",
+    "dotenv": "^16.4.5"
+  }
+}

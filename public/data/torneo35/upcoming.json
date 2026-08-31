@@ -1,0 +1,14 @@
+{
+  "updatedAt": "2026-04-29T00:00:00Z",
+  "phase": "Semifinales",
+  "matchdays": [
+    {
+      "day": "Jueves",
+      "venue": "La Trinidad",
+      "matches": [
+        { "homeTeam": "Atl. Mariño",      "awayTeam": "FRM",              "time": "7:00 PM" },
+        { "homeTeam": "The Family",        "awayTeam": "Junior la Cañada", "time": "9:00 PM" }
+      ]
+    }
+  ]
+}

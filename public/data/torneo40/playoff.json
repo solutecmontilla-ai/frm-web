@@ -1,0 +1,59 @@
+{
+  "quarterFinals": [
+    {
+      "label": "Llave A",
+      "team1": { "name": "Real Maracay", "seed": 1, "score": 2 },
+      "team2": { "name": "Juventus",     "seed": 8, "score": 0 },
+      "winner": 1
+    },
+    {
+      "label": "Llave D",
+      "team1": { "name": "Consorcio", "seed": 4, "score": 0 },
+      "team2": { "name": "Ágape",     "seed": 5, "score": 1 },
+      "winner": 2
+    },
+    {
+      "label": "Llave B",
+      "team1": { "name": "Golazo",  "seed": 2, "score": 1 },
+      "team2": { "name": "Chelsea", "seed": 7, "score": 0 },
+      "winner": 1
+    },
+    {
+      "label": "Llave C",
+      "team1": { "name": "Pepitos Point", "seed": 3, "score": 0 },
+      "team2": { "name": "Casa Italia",   "seed": 6, "score": 2 },
+      "winner": 2
+    }
+  ],
+  "semiFinals": [
+    {
+      "label": "Semi 1",
+      "team1": { "name": "Real Maracay", "seed": 1, "score": 0, "penaltyScore": 7 },
+      "team2": { "name": "Ágape",        "seed": 5, "score": 0, "penaltyScore": 6 },
+      "winner": 1,
+      "penalties": true
+    },
+    {
+      "label": "Semi 2",
+      "team1": { "name": "Golazo",     "seed": 2, "score": 1, "penaltyScore": 4 },
+      "team2": { "name": "Casa Italia","seed": 6, "score": 1, "penaltyScore": 5 },
+      "winner": 2,
+      "penalties": true
+    }
+  ],
+  "thirdPlace": {
+    "label": "Tercer Lugar",
+    "team1": { "name": "Golazo", "seed": 2, "score": 1, "penaltyScore": 4 },
+    "team2": { "name": "Ágape",  "seed": 5, "score": 1, "penaltyScore": 3 },
+    "winner": 1,
+    "penalties": true
+  },
+  "final": {
+    "label": "Gran Final",
+    "team1": { "name": "Real Maracay", "seed": 1, "score": 3 },
+    "team2": { "name": "Casa Italia",  "seed": 6, "score": 0 },
+    "winner": 1
+  },
+  "champion": "Real Maracay",
+  "updatedAt": "2026-05-03T00:00:00Z"
+}

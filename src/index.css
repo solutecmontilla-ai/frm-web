@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap');
+
+/* Liga FRM Design System - Deportivo y Profesional */
+
+@layer base {
+  :root {
+    --background: 240 15% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 12% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 12% 12%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 38 92% 50%;
+    --primary-foreground: 240 15% 8%;
+
+    --secondary: 280 60% 45%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 38 92% 50%;
+    --accent-foreground: 240 15% 8%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 38 92% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom Liga FRM tokens */
+    --gold: 38 92% 50%;
+    --gold-light: 42 100% 65%;
+    --purple: 280 60% 45%;
+    --purple-dark: 275 50% 25%;
+    --green-win: 142 70% 45%;
+    --red-loss: 0 72% 51%;
+    --draw: 45 93% 47%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(280 60% 25%) 0%, hsl(240 15% 8%) 50%, hsl(38 60% 20%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 12% 14%) 0%, hsl(240 12% 10%) 100%);
+    --gradient-gold: linear-gradient(90deg, hsl(38 92% 50%) 0%, hsl(42 100% 65%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(280 60% 45%) 0%, hsl(38 92% 50%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 20px -4px hsl(0 0% 0% / 0.5);
+    --shadow-glow: 0 0 30px -5px hsl(38 92% 50% / 0.3);
+  }
+
+  .dark {
+    --background: 240 15% 8%;
+    --foreground: 0 0% 98%;
+    --card: 240 12% 12%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 12% 12%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 38 92% 50%;
+    --primary-foreground: 240 15% 8%;
+    --secondary: 280 60% 45%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 240 15% 8%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 38 92% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}

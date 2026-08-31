@@ -1,0 +1,20 @@
+{
+  "name": "Liga FRM +35",
+  "edition": "2da Edición",
+  "season": "2025",
+  "category": "+35 años (Nocturna)",
+  "totalTeams": 10,
+  "currentPhase": "regular",
+  "teams": [
+    "Jezreel",
+    "Junior la Cañada",
+    "FRM",
+    "Atl. Mariño",
+    "Atl. San Ignacio",
+    "The Family",
+    "FC Coromoto",
+    "Ingenieros",
+    "Coromoto FC",
+    "Fénix"
+  ]
+}

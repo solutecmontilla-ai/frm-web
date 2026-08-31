@@ -1,0 +1,20 @@
+{
+  "name": "Liga FRM +40",
+  "edition": "9na Edición",
+  "season": "2025",
+  "category": "+40 años",
+  "totalTeams": 10,
+  "currentPhase": "playoffs",
+  "teams": [
+    "Real Maracay",
+    "Golazo",
+    "Pepitos Point",
+    "Consorcio",
+    "Ágape",
+    "Casa Italia",
+    "Chelsea",
+    "Juventus",
+    "Aviación",
+    "FRM"
+  ]
+}

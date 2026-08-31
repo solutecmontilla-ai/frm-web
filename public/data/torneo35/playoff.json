@@ -1,0 +1,50 @@
+{
+  "updatedAt": "2026-04-29T00:00:00Z",
+  "quarterFinals": [
+    {
+      "label": "Llave A",
+      "team1": { "name": "Atl. Mariño", "seed": 1, "score": 2, "scorers": [{ "name": "Hernán López", "goals": 1 }, { "name": "Franco Arévalo", "goals": 1 }] },
+      "team2": { "name": "Ingenieros",  "seed": 8, "score": 0, "scorers": [] },
+      "winner": 1
+    },
+    {
+      "label": "Llave D",
+      "team1": { "name": "FRM",             "seed": 4, "score": null },
+      "team2": { "name": "Atl. San Ignacio","seed": 5, "score": null },
+      "winner": 1
+    },
+    {
+      "label": "Llave B",
+      "team1": { "name": "Junior la Cañada","seed": 2, "score": 2, "penaltyScore": 7, "scorers": [{ "name": "Jorge Márquez", "goals": 2 }] },
+      "team2": { "name": "FC Coromoto",     "seed": 7, "score": 2, "penaltyScore": 6, "scorers": [{ "name": "Carlos García", "goals": 2 }] },
+      "winner": 1,
+      "penalties": true
+    },
+    {
+      "label": "Llave C",
+      "team1": { "name": "Jezreel",   "seed": 3, "score": null },
+      "team2": { "name": "The Family","seed": 6, "score": null },
+      "winner": 2
+    }
+  ],
+  "semiFinals": [
+    {
+      "label": "Semi 1",
+      "team1": { "name": "Atl. Mariño", "seed": 1, "score": null },
+      "team2": { "name": "FRM",         "seed": 4, "score": null },
+      "winner": null
+    },
+    {
+      "label": "Semi 2",
+      "team1": { "name": "Junior la Cañada","seed": 2, "score": null },
+      "team2": { "name": "The Family",      "seed": 6, "score": null },
+      "winner": null
+    }
+  ],
+  "final": {
+    "label": "Final",
+    "team1": null,
+    "team2": null,
+    "winner": null
+  }
+}
