@@ -4,7 +4,7 @@ const { pipeline } = require("stream/promises");
 const crypto = require("crypto");
 const db = require("../db");
 const { getEdicionActiva, calcularTabla, calcularGoleadores } = require("../standings");
-const { sendPushToAll } = require("./push");
+const { sendPushToAll, queueNotify } = require("./push");
 
 const SECRET = process.env.ADMIN_SECRET;
 
@@ -125,11 +125,8 @@ async function adminRoutes(fastify) {
 
     // Push notification a suscriptores
     const label = jornadaLabel || (jornada ? `Jornada ${jornada}` : "");
-    sendPushToAll(
-      "⚽ Liga FRM — Nuevo resultado",
-      `${localNombre} ${localGoles} – ${visitaGoles} ${visitaNombre}${label ? " · " + label : ""}`,
-      "/"
-    ).catch(() => {});
+    queueNotify(torneo, "resultado",
+      `${localNombre} ${localGoles}-${visitaGoles} ${visitaNombre}${label ? " (" + label + ")" : ""}`);
 
     return { ok: true, tabla, goleadores };
   });
@@ -163,6 +160,7 @@ async function adminRoutes(fastify) {
       );
     }
 
+    queueNotify(torneo, "suspendido", `${localNombre} vs ${visitaNombre}`);
     return { ok: true };
   });
 
@@ -293,6 +291,7 @@ async function adminRoutes(fastify) {
       "INSERT INTO proximos (edicion_id, equipo_local_id, equipo_visita_id, dia, hora, cancha) VALUES (?,?,?,?,?,?)",
       [edicionId, localId, visitaId, dia, hora, cancha]
     );
+    queueNotify(torneo, "proximos", 1);
     return { ok: true };
   });
 
@@ -586,6 +585,7 @@ async function adminRoutes(fastify) {
         count++;
       }
       await conn.commit();
+      if (count) queueNotify(torneo, "proximos", count);
       return { ok: true, count };
     } catch (e) {
       await conn.rollback();

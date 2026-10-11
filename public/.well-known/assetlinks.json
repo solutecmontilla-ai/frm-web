@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.amaysgroup.ligafrm",
+      "sha256_cert_fingerprints": [
+        "1F:2F:D9:53:4C:B6:79:A2:5D:66:1C:DD:43:FC:80:B1:59:EF:E9:94:A2:BE:94:24:F6:60:8E:63:37:EB:C1:D5"
+      ]
+    }
+  }
+]

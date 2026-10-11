@@ -1,0 +1,63 @@
+{
+  "packageId": "com.amaysgroup.ligafrm",
+  "host": "frm.amaysgroup.com",
+  "name": "Liga FRM",
+  "launcherName": "Liga FRM",
+  "display": "standalone",
+  "orientation": "portrait",
+  "themeColor": "#0A0A0A",
+  "themeColorDark": "#0A0A0A",
+  "navigationColor": "#0A0A0A",
+  "navigationColorDark": "#0A0A0A",
+  "navigationDividerColor": "#0A0A0A",
+  "navigationDividerColorDark": "#0A0A0A",
+  "backgroundColor": "#0A0A0A",
+  "enableNotifications": true,
+  "startUrl": "/",
+  "iconUrl": "https://frm.amaysgroup.com/icons/icon-512.png",
+  "maskableIconUrl": "https://frm.amaysgroup.com/icons/icon-maskable-512.png",
+  "splashScreenFadeOutDuration": 300,
+  "signingKey": {
+    "path": "./ligafrm-release.keystore",
+    "alias": "ligafrm"
+  },
+  "appVersionName": "1.0.0",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "Liga +40",
+      "shortName": "+40",
+      "url": "/torneo-40",
+      "chosenIconUrl": "https://frm.amaysgroup.com/icons/icon-512.png"
+    },
+    {
+      "name": "Liga +35",
+      "shortName": "+35",
+      "url": "/torneo-35",
+      "chosenIconUrl": "https://frm.amaysgroup.com/icons/icon-512.png"
+    }
+  ],
+  "generatorApp": "bubblewrap-cli",
+  "webManifestUrl": "https://frm.amaysgroup.com/manifest.webmanifest",
+  "fallbackType": "customtabs",
+  "features": {},
+  "alphaDependencies": { "enabled": false },
+  "enableSiteSettingsShortcut": true,
+  "isChromeOSOnly": false,
+  "isMetaQuest": false,
+  "fullScopeUrl": "https://frm.amaysgroup.com/",
+  "minSdkVersion": 24,
+  "fingerprints": [
+    {
+      "name": "upload",
+      "value": "1F:2F:D9:53:4C:B6:79:A2:5D:66:1C:DD:43:FC:80:B1:59:EF:E9:94:A2:BE:94:24:F6:60:8E:63:37:EB:C1:D5"
+    }
+  ],
+  "additionalTrustedOrigins": [],
+  "retainedBundles": [],
+  "protocolHandlers": [],
+  "fileHandlers": [],
+  "launchHandlerClientMode": "",
+  "displayOverride": [],
+  "appVersion": "1.0.0"
+}

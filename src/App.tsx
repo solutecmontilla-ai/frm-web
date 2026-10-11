@@ -19,6 +19,8 @@ import AdminSedes from "./pages/admin/AdminSedes";
 import { AdminProvider } from "./contexts/AdminContext";
 import Historial from "./pages/Historial";
 import DisciplinaPage from "./pages/DisciplinaPage";
+import Privacidad from "./pages/Privacidad";
+import { NotificationPrompt } from "./components/NotificationPrompt";
 
 const queryClient = new QueryClient();
 
@@ -29,11 +31,13 @@ const App = () => (
       <Sonner />
       <AdminProvider>
         <BrowserRouter>
+          <NotificationPrompt />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/torneo-40" element={<Torneo40 />} />
             <Route path="/torneo-35" element={<Torneo35 />} />
             <Route path="/historial" element={<Historial />} />
+            <Route path="/privacidad" element={<Privacidad />} />
             <Route path="/disciplina/:torneo" element={<DisciplinaPage />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminLayout />}>

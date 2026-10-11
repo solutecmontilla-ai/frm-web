@@ -65,4 +65,41 @@ async function sendPushToAll(title, body, url = "/") {
   }
 }
 
-module.exports = { pushRoutes, sendPushToAll };
+// Agrupa las actualizaciones de un torneo y envía UNA sola notificación
+// cuando pasan NOTIFY_DELAY_MS sin nuevas cargas (evita 5 pushes por jornada).
+const NOTIFY_DELAY_MS = 90 * 1000;
+const TORNEO_INFO = {
+  torneo40: { nombre: "Liga FRM +40", url: "/torneo-40" },
+  torneo35: { nombre: "Liga FRM +35", url: "/torneo-35" },
+};
+const pending = {};
+
+function queueNotify(torneo, tipo, detalle) {
+  const info = TORNEO_INFO[torneo] ?? { nombre: "Liga FRM", url: "/" };
+  const p = (pending[torneo] ??= { resultado: [], suspendido: [], proximos: 0, timer: null });
+  if (tipo === "proximos") p.proximos += detalle;
+  else p[tipo].push(detalle);
+
+  clearTimeout(p.timer);
+  p.timer = setTimeout(() => {
+    delete pending[torneo];
+    const partes = [];
+    let title;
+    if (p.resultado.length === 1 && !p.proximos && !p.suspendido.length) {
+      title = `⚽ ${info.nombre} — Nuevo resultado`;
+      partes.push(p.resultado[0]);
+    } else if (p.resultado.length) {
+      title = `⚽ ${info.nombre} — ${p.resultado.length} resultado${p.resultado.length > 1 ? "s" : ""} nuevo${p.resultado.length > 1 ? "s" : ""}`;
+      partes.push(p.resultado.slice(0, 3).join(" · ") + (p.resultado.length > 3 ? " …" : ""));
+    } else if (p.proximos) {
+      title = `📅 ${info.nombre} — Nueva programación`;
+    } else {
+      title = `⚠️ ${info.nombre} — Partido suspendido`;
+    }
+    if (p.suspendido.length) partes.push(`Suspendido: ${p.suspendido.join(", ")}`);
+    if (p.proximos) partes.push(`${p.proximos} partido${p.proximos > 1 ? "s" : ""} programado${p.proximos > 1 ? "s" : ""}`);
+    sendPushToAll(title, partes.join("\n"), info.url).catch(() => {});
+  }, NOTIFY_DELAY_MS);
+}
+
+module.exports = { pushRoutes, sendPushToAll, queueNotify };

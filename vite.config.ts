@@ -20,6 +20,7 @@ export default defineConfig({
       srcDir: "src",
       filename: "sw.ts",
       manifest: {
+        id: "/",
         name: "Liga FRM",
         short_name: "Liga FRM",
         description: "Portal oficial de la Liga FRM — Fútbol amateur",
@@ -28,20 +29,15 @@ export default defineConfig({
         display: "standalone",
         orientation: "portrait-primary",
         start_url: "/",
+        lang: "es",
+        dir: "ltr",
+        categories: ["sports"],
         scope: "/",
         icons: [
-          {
-            src: "/icons/icon-192.png",
-            sizes: "192x192",
-            type: "image/png",
-            purpose: "any",
-          },
-          {
-            src: "/icons/icon-512.png",
-            sizes: "512x512",
-            type: "image/png",
-            purpose: "any maskable",
-          },
+          { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+          { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+          { src: "/icons/icon-maskable-192.png", sizes: "192x192", type: "image/png", purpose: "maskable" },
+          { src: "/icons/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
         ],
       },
       devOptions: {
