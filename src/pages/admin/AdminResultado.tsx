@@ -14,8 +14,9 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Plus, X, Send } from "lucide-react";
-import { useState } from "react";
+import { Plus, X, Send, AlertTriangle } from "lucide-react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { UseFormRegister } from "react-hook-form";
 
 const golerSchema  = z.object({ name: z.string().min(1), goals: z.coerce.number().min(1) });
@@ -40,9 +41,13 @@ const schema = z.object({
 
 type FormValues = z.infer<typeof schema>;
 
+interface Equipo { id: number; nombre: string; }
+
 interface TeamSectionProps {
   label: string;
-  nombreReg: ReturnType<UseFormRegister<FormValues>>;
+  campoNombre: "localNombre" | "visitaNombre";
+  equipos: Equipo[];
+  jugadores: string[];
   golesReg: ReturnType<UseFormRegister<FormValues>>;
   golesArr: UseFieldArrayReturn<FormValues, any>;
   amarillasArr: UseFieldArrayReturn<FormValues, any>;
@@ -57,7 +62,9 @@ interface TeamSectionProps {
 
 function TeamSection({
   label,
-  nombreReg,
+  campoNombre,
+  equipos,
+  jugadores,
   golesReg,
   golesArr,
   amarillasArr,
@@ -69,6 +76,8 @@ function TeamSection({
   watch,
   setValue,
 }: TeamSectionProps) {
+  const nombre = watch(campoNombre);
+  const listId = `jugadores-${campoNombre}`;
   return (
     <div className="bg-gradient-card border border-border/50 rounded-xl p-4 space-y-4">
       <h3 className="text-xs font-bold text-primary uppercase tracking-widest font-display">
@@ -78,13 +87,26 @@ function TeamSection({
       <div className="grid grid-cols-3 gap-3">
         <div className="col-span-2 space-y-1.5">
           <Label>Equipo</Label>
-          <Input placeholder="Nombre del equipo" {...nombreReg} />
+          {equipos.length > 0 ? (
+            <Select value={nombre || undefined} onValueChange={(v) => setValue(campoNombre, v)}>
+              <SelectTrigger><SelectValue placeholder="Elegir equipo" /></SelectTrigger>
+              <SelectContent>
+                {equipos.map((eq) => <SelectItem key={eq.id} value={eq.nombre}>{eq.nombre}</SelectItem>)}
+              </SelectContent>
+            </Select>
+          ) : (
+            <Input placeholder="Nombre del equipo" {...register(campoNombre)} />
+          )}
         </div>
         <div className="space-y-1.5">
           <Label>Goles</Label>
           <Input type="number" min={0} {...golesReg} />
         </div>
       </div>
+
+      <datalist id={listId}>
+        {jugadores.map((j) => <option key={j} value={j} />)}
+      </datalist>
 
       {/* Goleadores */}
       <div className="space-y-2">
@@ -97,7 +119,7 @@ function TeamSection({
         </div>
         {golesArr.fields.map((field, i) => (
           <div key={field.id} className="flex gap-2 items-center">
-            <Input placeholder="Jugador" className="flex-1"
+            <Input placeholder="Jugador" className="flex-1" list={listId} autoComplete="off"
               {...register(`${prefix}.${i}.name` as any)} />
             <Input type="number" min={1} className="w-16 shrink-0"
               {...register(`${prefix}.${i}.goals` as any)} />
@@ -121,7 +143,7 @@ function TeamSection({
         </div>
         {amarillasArr.fields.map((field, i) => (
           <div key={field.id} className="flex gap-2 items-center">
-            <Input placeholder="Jugador"
+            <Input placeholder="Jugador" list={listId} autoComplete="off"
               className="flex-1 border-amber-500/30 focus-visible:ring-amber-500/30"
               {...register(`${prefixAma}.${i}.name` as any)} />
             <Button type="button" variant="ghost" size="icon" className="h-8 w-8 shrink-0"
@@ -146,7 +168,7 @@ function TeamSection({
           const tipoVal = watch(`${prefixRoja}.${i}.tipo`);
           return (
             <div key={field.id} className="flex gap-2 items-center">
-              <Input placeholder="Jugador"
+              <Input placeholder="Jugador" list={listId} autoComplete="off"
                 className="flex-1 border-destructive/30 focus-visible:ring-destructive/30"
                 {...register(`${prefixRoja}.${i}.name` as any)} />
               <div className="flex gap-1 shrink-0">
@@ -180,19 +202,27 @@ function TeamSection({
 export default function AdminResultado() {
   const { secret } = useAdmin();
   const [loading, setLoading] = useState(false);
+  const [suspendiendo, setSuspendiendo] = useState(false);
+  const [params] = useSearchParams();
+  const [equipos, setEquipos] = useState<Equipo[]>([]);
+  const [jugadoresLocal, setJugadoresLocal] = useState<string[]>([]);
+  const [jugadoresVisita, setJugadoresVisita] = useState<string[]>([]);
+
+  // Valores iniciales desde el link "Cargar" del Inicio (partido suspendido)
+  const jornadaParam = Number(params.get("jornada")) || 1;
 
   const form = useForm<FormValues>({
     resolver: zodResolver(schema),
     defaultValues: {
-      torneo: "torneo40",
-      jornada: 1,
-      jornadaLabel: "Jornada 1",
-      localNombre: "",
+      torneo: params.get("torneo") === "torneo35" ? "torneo35" : "torneo40",
+      jornada: jornadaParam,
+      jornadaLabel: `Jornada ${jornadaParam}`,
+      localNombre: params.get("local") ?? "",
       localGoles: 0,
       golesLocal: [],
       amarillasLocal: [],
       rojasLocal: [],
-      visitaNombre: "",
+      visitaNombre: params.get("visita") ?? "",
       visitaGoles: 0,
       golesVisita: [],
       amarillasVisita: [],
@@ -210,9 +240,53 @@ export default function AdminResultado() {
   const rojasVisitaArr   = useFieldArray({ control: form.control, name: "rojasVisita" });
 
   const torneo = watch("torneo");
-  const jornada = watch("jornada");
+  const localNombre = watch("localNombre");
+  const visitaNombre = watch("visitaNombre");
+
+  useEffect(() => {
+    adminFetch(secret, `/equipos/${torneo}`)
+      .then((d) => setEquipos(d.equipos))
+      .catch(() => setEquipos([]));
+  }, [torneo, secret]);
+
+  useEffect(() => {
+    const cargar = (equipo: string, set: (j: string[]) => void) => {
+      if (!equipo) return set([]);
+      adminFetch(secret, `/jugadores/${torneo}?equipo=${encodeURIComponent(equipo)}`)
+        .then((d) => set(d.jugadores))
+        .catch(() => set([]));
+    };
+    cargar(localNombre, setJugadoresLocal);
+    cargar(visitaNombre, setJugadoresVisita);
+  }, [torneo, localNombre, visitaNombre, secret]);
+
+  const marcarSuspendido = async () => {
+    const { torneo, jornada, jornadaLabel, localNombre, visitaNombre } = form.getValues();
+    if (!localNombre || !visitaNombre) return toast.error("Elige los dos equipos");
+    if (localNombre === visitaNombre) return toast.error("Local y visita no pueden ser el mismo equipo");
+    setSuspendiendo(true);
+    try {
+      await adminFetch(secret, "/suspendido", {
+        method: "POST",
+        body: JSON.stringify({ torneo, jornada: Number(jornada), jornadaLabel, localNombre, visitaNombre }),
+      });
+      toast.success(`Suspendido: ${localNombre} vs ${visitaNombre} (${jornadaLabel})`);
+      setValue("localNombre", "");
+      setValue("visitaNombre", "");
+    } catch (e: any) {
+      toast.error(e.message);
+    } finally {
+      setSuspendiendo(false);
+    }
+  };
 
   const onSubmit = async (data: FormValues) => {
+    if (data.localNombre === data.visitaNombre)
+      return toast.error("Local y visita no pueden ser el mismo equipo");
+    const sumaLocal = data.golesLocal.reduce((n, g) => n + Number(g.goals), 0);
+    const sumaVisita = data.golesVisita.reduce((n, g) => n + Number(g.goals), 0);
+    if (sumaLocal > data.localGoles || sumaVisita > data.visitaGoles)
+      return toast.error("Hay más goles en los goleadores que en el marcador");
     setLoading(true);
     try {
       await adminFetch(secret, "/resultado", {
@@ -265,7 +339,14 @@ export default function AdminResultado() {
           <div className="grid grid-cols-2 gap-4">
             <div className="space-y-1.5">
               <Label>Torneo</Label>
-              <Select value={torneo} onValueChange={(v) => setValue("torneo", v as any)}>
+              <Select
+                value={torneo}
+                onValueChange={(v) => {
+                  setValue("torneo", v as any);
+                  setValue("localNombre", "");
+                  setValue("visitaNombre", "");
+                }}
+              >
                 <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
                   <SelectItem value="torneo40">Liga +40</SelectItem>
@@ -294,7 +375,9 @@ export default function AdminResultado() {
 
         <TeamSection
           label="Local"
-          nombreReg={register("localNombre")}
+          campoNombre="localNombre"
+          equipos={equipos}
+          jugadores={jugadoresLocal}
           golesReg={register("localGoles")}
           golesArr={golesLocalArr}
           amarillasArr={amarillasLocalArr}
@@ -309,7 +392,9 @@ export default function AdminResultado() {
 
         <TeamSection
           label="Visita"
-          nombreReg={register("visitaNombre")}
+          campoNombre="visitaNombre"
+          equipos={equipos}
+          jugadores={jugadoresVisita}
           golesReg={register("visitaGoles")}
           golesArr={golesVisitaArr}
           amarillasArr={amarillasVisitaArr}
@@ -322,10 +407,27 @@ export default function AdminResultado() {
           setValue={setValue}
         />
 
-        <Button type="submit" className="w-full" disabled={loading}>
-          <Send className="w-4 h-4 mr-2" />
-          {loading ? "Registrando..." : "Registrar Resultado"}
-        </Button>
+        <p className="text-[11px] text-muted-foreground">
+          Si un goleador no aparece (autogol), deja el gol solo en el marcador. Si el partido ya estaba cargado
+          o suspendido en esa jornada, se actualiza.
+        </p>
+
+        <div className="grid grid-cols-[1fr_auto] gap-2">
+          <Button type="submit" disabled={loading || suspendiendo}>
+            <Send className="w-4 h-4 mr-2" />
+            {loading ? "Registrando..." : "Registrar Resultado"}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            className="border-amber-500/40 text-amber-400 hover:bg-amber-500/10 hover:text-amber-300"
+            disabled={loading || suspendiendo}
+            onClick={marcarSuspendido}
+          >
+            <AlertTriangle className="w-4 h-4 mr-2" />
+            {suspendiendo ? "..." : "Suspendido"}
+          </Button>
+        </div>
       </form>
     </div>
   );

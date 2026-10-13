@@ -34,6 +34,11 @@ async function getOrCreateEquipo(torneoSlug, nombre) {
   return { id: res.insertId, torneoId };
 }
 
+// El front manda "segunda_amarilla"; el enum de la tabla rojas es 'directa' | 'doble_amarilla'
+function normalizarTipoRoja(tipo) {
+  return tipo === "doble_amarilla" || tipo === "segunda_amarilla" ? "doble_amarilla" : "directa";
+}
+
 async function adminRoutes(fastify) {
   // POST /api/admin/resultado
   // Body: { torneo, localNombre, localGoles, visitaNombre, visitaGoles,
@@ -108,14 +113,16 @@ async function adminRoutes(fastify) {
     // roja_directa = 2 jornadas (insertar jornada_num N y N+1)
     // segunda_amarilla = 1 jornada (solo jornada_num N)
     for (const r of rojasLocal) {
-      await db.query("INSERT INTO rojas (partido_id, equipo_id, jugador_nombre, tipo) VALUES (?,?,?,?)", [partidoId, localId, r.name, r.tipo ?? "directa"]);
-      const motivo = r.tipo === "doble_amarilla" ? "segunda_amarilla" : "roja_directa";
+      const tipoRoja = normalizarTipoRoja(r.tipo);
+      await db.query("INSERT INTO rojas (partido_id, equipo_id, jugador_nombre, tipo) VALUES (?,?,?,?)", [partidoId, localId, r.name, tipoRoja]);
+      const motivo = tipoRoja === "doble_amarilla" ? "segunda_amarilla" : "roja_directa";
       await db.query("INSERT INTO suspensiones (edicion_id, equipo_id, jugador_nombre, motivo, fecha_sancion, jornada_num) VALUES (?,?,?,?,CURDATE(),?)", [edicionId, localId, r.name, motivo, jornada]);
       if (motivo === "roja_directa") await db.query("INSERT INTO suspensiones (edicion_id, equipo_id, jugador_nombre, motivo, fecha_sancion, jornada_num) VALUES (?,?,?,?,CURDATE(),?)", [edicionId, localId, r.name, motivo, jornada + 1]);
     }
     for (const r of rojasVisita) {
-      await db.query("INSERT INTO rojas (partido_id, equipo_id, jugador_nombre, tipo) VALUES (?,?,?,?)", [partidoId, visitaId, r.name, r.tipo ?? "directa"]);
-      const motivo = r.tipo === "doble_amarilla" ? "segunda_amarilla" : "roja_directa";
+      const tipoRoja = normalizarTipoRoja(r.tipo);
+      await db.query("INSERT INTO rojas (partido_id, equipo_id, jugador_nombre, tipo) VALUES (?,?,?,?)", [partidoId, visitaId, r.name, tipoRoja]);
+      const motivo = tipoRoja === "doble_amarilla" ? "segunda_amarilla" : "roja_directa";
       await db.query("INSERT INTO suspensiones (edicion_id, equipo_id, jugador_nombre, motivo, fecha_sancion, jornada_num) VALUES (?,?,?,?,CURDATE(),?)", [edicionId, visitaId, r.name, motivo, jornada]);
       if (motivo === "roja_directa") await db.query("INSERT INTO suspensiones (edicion_id, equipo_id, jugador_nombre, motivo, fecha_sancion, jornada_num) VALUES (?,?,?,?,CURDATE(),?)", [edicionId, visitaId, r.name, motivo, jornada + 1]);
     }
@@ -463,7 +470,8 @@ async function adminRoutes(fastify) {
   // POST /api/admin/roja — registrar tarjeta roja
   fastify.post("/roja", async (req, reply) => {
     if (!checkAuth(req, reply)) return;
-    const { torneo, partidoId, equipoNombre, jugadorNombre, tipo = "directa" } = req.body;
+    const { torneo, partidoId, equipoNombre, jugadorNombre } = req.body;
+    const tipo = normalizarTipoRoja(req.body.tipo);
     const { id: equipoId } = await getOrCreateEquipo(torneo, equipoNombre);
     const [ins] = await db.query(
       "INSERT INTO rojas (partido_id, equipo_id, jugador_nombre, tipo) VALUES (?,?,?,?)",
@@ -593,6 +601,93 @@ async function adminRoutes(fastify) {
     } finally {
       conn.release();
     }
+  });
+
+  // GET /api/admin/resumen — estado de cada torneo para el inicio del panel
+  fastify.get("/resumen", async (req, reply) => {
+    if (!checkAuth(req, reply)) return;
+    const torneos = [];
+    for (const slug of ["torneo40", "torneo35"]) {
+      const [[ed]] = await db.query(
+        `SELECT e.id, e.nombre FROM ediciones e JOIN torneos t ON t.id = e.torneo_id
+         WHERE t.slug = ? AND e.activa = 1 LIMIT 1`,
+        [slug]
+      );
+      if (!ed) { torneos.push({ torneo: slug, edicion: null }); continue; }
+
+      const [[stats]] = await db.query(
+        `SELECT
+           SUM(estado = 'jugado') AS jugados,
+           MAX(CASE WHEN estado = 'jugado' THEN jornada_num END) AS ultimaJornada
+         FROM partidos WHERE edicion_id = ?`,
+        [ed.id]
+      );
+      const [suspendidos] = await db.query(
+        `SELECT p.id, p.jornada_num AS jornada, p.jornada_label AS jornadaLabel,
+                el.nombre AS local, ev.nombre AS visita
+         FROM partidos p
+         JOIN equipos el ON el.id = p.equipo_local_id
+         JOIN equipos ev ON ev.id = p.equipo_visita_id
+         WHERE p.edicion_id = ? AND p.estado = 'suspendido'
+         ORDER BY p.jornada_num, p.id`,
+        [ed.id]
+      );
+      const [proximos] = await db.query(
+        `SELECT pr.dia, pr.hora, pr.cancha, el.nombre AS local, ev.nombre AS visita
+         FROM proximos pr
+         JOIN equipos el ON el.id = pr.equipo_local_id
+         JOIN equipos ev ON ev.id = pr.equipo_visita_id
+         WHERE pr.edicion_id = ? ORDER BY pr.id`,
+        [ed.id]
+      );
+      const [[susp]] = await db.query(
+        "SELECT COUNT(*) AS n FROM suspensiones WHERE edicion_id = ? AND cumplida = 0",
+        [ed.id]
+      );
+      torneos.push({
+        torneo: slug,
+        edicion: ed.nombre,
+        jugados: Number(stats.jugados ?? 0),
+        ultimaJornada: stats.ultimaJornada,
+        suspendidos,
+        proximos,
+        sancionesPendientes: susp.n,
+      });
+    }
+    const [[subs]] = await db.query("SELECT COUNT(*) AS n FROM push_subscriptions");
+    return { torneos, suscriptores: subs.n };
+  });
+
+  // GET /api/admin/jugadores/:torneo?equipo=Nombre — nombres ya usados (para autocompletar)
+  fastify.get("/jugadores/:torneo", async (req, reply) => {
+    if (!checkAuth(req, reply)) return;
+    const { equipo } = req.query;
+    if (!equipo) return { jugadores: [] };
+    const [rows] = await db.query(
+      `SELECT DISTINCT x.jugador_nombre AS nombre FROM (
+         SELECT g.jugador_nombre, g.equipo_id FROM goles g
+         UNION SELECT a.jugador_nombre, a.equipo_id FROM amarillas a
+         UNION SELECT r.jugador_nombre, r.equipo_id FROM rojas r
+       ) x
+       JOIN equipos eq ON eq.id = x.equipo_id
+       JOIN torneos t ON t.id = eq.torneo_id
+       WHERE t.slug = ? AND eq.nombre = ? AND x.jugador_nombre IS NOT NULL AND x.jugador_nombre <> ''
+       ORDER BY nombre`,
+      [req.params.torneo, equipo]
+    );
+    return { jugadores: rows.map((r) => r.nombre) };
+  });
+
+  // POST /api/admin/notificar — notificación manual a todos los suscriptores
+  // Body: { title, body, url? }
+  fastify.post("/notificar", async (req, reply) => {
+    if (!checkAuth(req, reply)) return;
+    const { title, body, url = "/" } = req.body ?? {};
+    if (!title?.trim() || !body?.trim())
+      return reply.code(400).send({ error: "Título y mensaje son requeridos" });
+    await sendPushToAll(title.trim(), body.trim(), url);
+    const [[subs]] = await db.query("SELECT COUNT(*) AS n FROM push_subscriptions");
+    return { ok: true, suscriptores: subs.n };
   });
 
   // PATCH /api/admin/edicion/:id/hero

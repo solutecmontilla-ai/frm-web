@@ -13,14 +13,18 @@ import {
   Users,
   ShieldAlert,
   MapPin,
+  Home,
+  Bell,
 } from "lucide-react";
 import ligaLogo from "@/assets/liga-frm-logo.png";
 
 const NAV = [
+  { to: "/admin",           label: "Inicio",        icon: Home, end: true },
   { to: "/admin/resultado", label: "Resultado",     icon: ClipboardList },
   { to: "/admin/playoff",   label: "Playoff",       icon: Swords },
   { to: "/admin/roja",      label: "Tarjeta Roja",  icon: ShieldAlert },
   { to: "/admin/proximos",  label: "Próximos",      icon: Calendar },
+  { to: "/admin/notificaciones", label: "Notificaciones", icon: Bell },
   { to: "/admin/equipos",   label: "Equipos",       icon: Users },
   { to: "/admin/sedes",     label: "Sedes",         icon: MapPin },
   { to: "/admin/edicion",   label: "Edición / Hero", icon: Plus },
@@ -51,10 +55,11 @@ export default function AdminLayout() {
       </div>
 
       <nav className="flex-1 p-3 space-y-1">
-        {NAV.map(({ to, label, icon: Icon }) => (
+        {NAV.map(({ to, label, icon: Icon, end }) => (
           <NavLink
             key={to}
             to={to}
+            end={end}
             onClick={() => setOpen(false)}
             className={({ isActive }) =>
               cn(

@@ -16,6 +16,8 @@ import AdminEdicion from "./pages/admin/AdminEdicion";
 import AdminRoja from "./pages/admin/AdminRoja";
 import AdminEquipos from "./pages/admin/AdminEquipos";
 import AdminSedes from "./pages/admin/AdminSedes";
+import AdminInicio from "./pages/admin/AdminInicio";
+import AdminNotificaciones from "./pages/admin/AdminNotificaciones";
 import { AdminProvider } from "./contexts/AdminContext";
 import Historial from "./pages/Historial";
 import DisciplinaPage from "./pages/DisciplinaPage";
@@ -41,7 +43,8 @@ const App = () => (
             <Route path="/disciplina/:torneo" element={<DisciplinaPage />} />
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={<AdminLayout />}>
-              <Route index element={<Navigate to="/admin/resultado" replace />} />
+              <Route index element={<AdminInicio />} />
+              <Route path="notificaciones" element={<AdminNotificaciones />} />
               <Route path="resultado" element={<AdminResultado />} />
               <Route path="playoff"   element={<AdminPlayoff />} />
               <Route path="proximos"  element={<AdminProximos />} />
